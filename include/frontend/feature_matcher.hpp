@@ -1,18 +1,20 @@
-#ifndef FEATURE_EXTRACTOR_HPP
-#define FEATURE_EXTRACTOR_HPP
+#ifndef FEATURE_MATCHER_HPP
+#define FEATURE_MATCHER_HPP
+
+// I'll add other feature methods to here, if possible...
 
 #include "opencv2/opencv.hpp"
 #include "opencv2/features2d.hpp"
 
 namespace shslam
 {
-class FeatureExtractor
+class FeatureMatcher
 {
 public:
-    FeatureExtractor(cv::Ptr<cv::Features2D> _detector);
-    ~FeatureExtractor();
+    FeatureMatcher(cv::Ptr<cv::Features2D> _detector);
+    ~FeatureMatcher();
 
-    cv::Mat extract(const cv::Mat frame);
+    cv::Mat process(const cv::Mat frame);
 private:
     cv::Ptr<cv::Features2D> detector;
     cv::Mat first_frame;

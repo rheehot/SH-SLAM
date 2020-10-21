@@ -1,13 +1,13 @@
-#include "frontend/feature_extractor.hpp"
+#include "frontend/feature_matcher.hpp"
 
 namespace shslam
 {
-FeatureExtractor::FeatureExtractor(cv::Ptr<cv::Features2D> _detector) : detector(_detector)
+FeatureMatcher::FeatureMatcher(cv::Ptr<cv::Features2D> _detector) : detector(_detector)
 {
     // Load detection parameters from config
 }
 
-cv::Mat FeatureExtractor::extract(const cv::Mat frame)
+cv::Mat FeatureMatcher::extract(const cv::Mat frame)
 {
     std::vector<cv::KeyPoint> keypoint;
     cv::Mat descriptor;
