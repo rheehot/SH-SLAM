@@ -16,6 +16,9 @@ public:
 
     cv::Mat process(const cv::Mat frame);
 private:
+    cv::Mat extract_features(const cv::Mat frame);
+    cv::Mat match_features(const cv::Mat frame_src, const cv::Mat frame_dst);
+
     cv::Ptr<cv::Features2D> detector;
     cv::Mat first_frame;
     cv::Mat first_descriptor;

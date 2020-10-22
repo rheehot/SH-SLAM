@@ -14,4 +14,15 @@ cv::Mat FeatureMatcher::extract(const cv::Mat frame)
 
     detector->detectAndCompute(frame, cv::noArray(), keypoint, descriptor);
 }
+
+cv::Mat FeatureMatcher::extract_features(const cv::Mat frame)
+{
+    return frame;
+}
+
+cv::Mat FeatureMatcher::match_features(const cv::Mat frame_src, const cv::Mat frame_dst)
+{
+    (void)frame_src;
+    return frame_dst;
+}
 } // namespace shslam
