@@ -11,10 +11,16 @@ class RelativeCameraPose
 public:
     RelativeCameraPose();
     ~RelativeCameraPose();
+
+    void compute();
+    cv::Mat get_relative_pose() { return relative_pose_; }
+
 private:
     cv::Mat compute_homography();
     cv::Mat compute_essential_matrix();
     uint32_t symmetric_transfer_error();
+
+    cv::Mat relative_pose_;
 };
 } // namespace shslam
 

@@ -11,18 +11,17 @@ namespace shslam
 class FeatureMatcher
 {
 public:
-    FeatureMatcher(cv::Ptr<cv::Features2D> _detector);
+    FeatureMatcher();
     ~FeatureMatcher();
 
-    cv::Mat process(const cv::Mat frame);
+    cv::Mat process(const cv::Mat frame_src, const cv::Mat frame_dst);
+
 private:
     cv::Mat extract_features(const cv::Mat frame);
-    cv::Mat match_features(const cv::Mat frame_src, const cv::Mat frame_dst);
+    void match_features(const cv::Mat descriptor_src, const cv::Mat descriptor_dst);
 
-    cv::Ptr<cv::Features2D> detector;
-    cv::Mat first_frame;
-    cv::Mat first_descriptor;
-    std::vector<cv::KeyPoint> first_keypoint;
+    cv::Ptr<ORB> detector_;
+    cv::Ptr<DescriptorMatcher> matcher_;
 };
 } // namespace shslam
 

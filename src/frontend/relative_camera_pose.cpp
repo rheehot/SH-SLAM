@@ -12,6 +12,11 @@ RelativeCameraPose::~RelativeCameraPose()
     // 
 }
 
+void RelativeCameraPose::compute()
+{
+    //
+}
+
 cv::Mat RelativeCameraPose::compute_homography()
 {
     //
