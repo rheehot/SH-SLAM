@@ -1,8 +1,6 @@
 #ifndef FEATURE_MATCHER_HPP
 #define FEATURE_MATCHER_HPP
 
-// I'll add other feature methods to here, if possible...
-
 #include "opencv2/opencv.hpp"
 #include "opencv2/features2d.hpp"
 
