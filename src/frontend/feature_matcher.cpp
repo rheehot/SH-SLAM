@@ -29,13 +29,14 @@ cv::Mat FeatureMatcher::extract_features(const cv::Mat frame)
 
     detector->detectAndCompute(frame, cv::noArray(), keypoint, descriptor);
 
+    // [TODO] I should get keypoints!!!
     return descrptor;
 }
 
 std::vector<DMatch> FeatureMatcher::match_features(const cv::Mat descriptor_src, const cv::Mat descriptor_dst)
 {
     const float ratio_threshhold = 0.7f;
-    std::vector< std::vector<DMatch> > knn_matches;
+    std::vector<std::vector<DMatch>> knn_matches;
     std::vector<DMatch> good_matches;
 
     matcher->knnMatch(descriptor_src, descriptor_dst, knn_matches, 2);
