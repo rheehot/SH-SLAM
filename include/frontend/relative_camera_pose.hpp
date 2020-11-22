@@ -4,6 +4,7 @@
 #include "opencv2/opencv.hpp"
 #include "opencv2/calib3d.hpp"
 #include "opencv2/features2d.hpp"
+#include "opencv2/sfm/fundamental.hpp"
 
 #include "frontend/feature_matcher.hpp"
 
@@ -34,7 +35,9 @@ private:
 
     shslam::FeatureMatcher matcher_;
 
-    cv::Mat relative_pose_;
+    cv::Mat transform_model_;
+    cv::Mat relative_pose_rotation_;
+    cv::Mat relative_pose_translation_;
 };
 } // namespace shslam
 
